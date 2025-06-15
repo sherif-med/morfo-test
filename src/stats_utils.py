@@ -55,7 +55,7 @@ def stats_to_parquet_and_upload(batch_array, local_path: str, bucket_name: str, 
     """
     """
     # Generate Parquet file locally
-    df = stats_to_parquet(batch_array, local_path)
+    _ = stats_to_parquet(batch_array, local_path)
 
     # Upload to S3
     s3 = boto3.client('s3')
