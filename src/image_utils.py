@@ -49,6 +49,7 @@ def burn_squares(img: np.ndarray, squares: list[Square]) -> np.ndarray:
     return img
 
 def random_image_crop(img: np.ndarray, square_size: int) -> np.ndarray:
+    assert img.shape[0] >= square_size and img.shape[1] >= square_size
     x_start = np.random.randint(0, img.shape[1] - square_size)
     y_start = np.random.randint(0, img.shape[0] - square_size)
     return img[y_start:y_start + square_size, x_start:x_start + square_size]
